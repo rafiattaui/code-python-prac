@@ -21,7 +21,7 @@ while choice != 5:
     match choice:
         case 1:
              newitem = input("Enter the item: ")
-             if match(r"^[a-zA-Z0-9]+$", newitem ):
+             if match(r"^[a-zA-Z0-9]+$", newitem ):  # Random regex to ensure only numbers and letters are added
                 groceries.append(newitem)
                 print(groceries)
                 sleep(1.5)
@@ -30,12 +30,12 @@ while choice != 5:
         case 2: print(groceries); sleep(1.5)
         
         case 3:
-            if len(groceries) == 0:
+            if len(groceries) == 0: # Ensure list has items to be removed
                 print("No items in list")
             else:
                 print(groceries) 
                 delitem = input("Enter the item to be removed: ")
-                if delitem in groceries:
+                if delitem in groceries:        # If statement to check if item to be deleted is in the list
                     groceries.remove(delitem)
                     print(groceries)
                 else: print("Item not in grocery list!")
